@@ -13,4 +13,12 @@ class Notice(models.Model):
         return self.titie
 
 
-
+class login(models.Model):
+    username=models.CharField(max_length=50)
+    password=models.CharField(max_length=50)
+    
+    def Meta:
+        db_name='login'
+        
+    def __unicode__(self):
+        return self.username
