@@ -8,7 +8,8 @@ class UserForm(ModelForm):
     class Meta:
         model = login
         fields = '__all__'
-        lables ={
+
+        labels ={
             'username':'yonghuming',
             'password':'mima',
         }

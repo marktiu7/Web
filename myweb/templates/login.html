@@ -25,7 +25,7 @@
 
    <div class='col-md-2' ></div>
 
-   <div class='col-md-6'>
+   <div class='col-md-5'>
         <table class='table table-hover' >
            <th>notice</th>
            {%for i in mo %}
@@ -42,10 +42,23 @@
 
    <div class='col-md-1'> </div>
    
-   <div class='col-md-3 '>
-     <table class='table'>
-       <tr><td>login</td></tr>
-     </table>
+   <div class='col-md-4 '>
+
+     <form method="post" >
+         <table class='table'>
+           {%for u in uf %}
+             <tr>
+               <td>{{u.label_tag}} {{u}}</td>
+               <td>{{u.errors}}</td>
+               </tr>
+              <tr>
+             {%endfor%}   
+                <td> <input type="submit" name="" value="ok"> </td>
+                <td> <input type="submit" name="" value="re"></td>
+                </tr>
+         </table> 
+     </form>
+     
      
      
        </div>
