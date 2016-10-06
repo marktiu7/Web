@@ -6,7 +6,11 @@ from django.db import models
 
 class Notice(models.Model):
     title=models.CharField(max_length=100)
+    time = models.DateTimeField()
     comment=models.TextField()
 
-    
+    def __unicode__(self):
+        return self.titie
+
+
 
