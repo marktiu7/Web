@@ -18,3 +18,8 @@ def index(request):
     else:
         uf = UserForm()
     return render_to_response('login.html',locals())
+
+
+def main(request):
+    hh = 'hello there'
+    return render_to_response('base.html',locals())    

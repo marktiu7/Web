@@ -23,4 +23,5 @@ urlpatterns = [
 
 urlpatterns +=[
     url(r'^index/$',views.index,name='index'),
+    url(r'^main/$',views.main,name='main'),
 ]
