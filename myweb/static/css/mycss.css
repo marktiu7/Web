@@ -1,5 +1,5 @@
 .header {
-    height: 150px;
+    height: 110px;
 }
 
 /*left start*/
@@ -38,8 +38,6 @@ form{
 	margin-top: 100px;
 }
 
-.table input {
-  float: right;
-}
+
 /*right end*/
 

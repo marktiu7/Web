@@ -77,16 +77,17 @@
          <table class='table'>
            {%for u in uf %}
              <tr>
-               <td>{{u.label_tag}} {{u}}</td>
+               <td>{{u.label_tag}}</td>
+               <td>{{u}}</td>
                <td>{{u.errors}}</td>
                </tr>
-              <tr>
-             {%endfor%}   
-                <td> <input type="submit" name="" value="denglu"> </td>
-                <td> <input type="submit" name="" value="zhuce"></td>
-                </tr>
+           {%endfor%}  
+
          </table> 
+      <input class="btn btn-default" type="submit" style="margin-left: 20px" value="denglu">
+      <button class="btn btn-default" style="float: right;margin-right: 5px" type="button">zhuce</button>
      </form>
+    
  <!--right-login end -->    
        </div>
 <!--right end-->
