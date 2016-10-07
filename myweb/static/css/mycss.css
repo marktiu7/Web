@@ -1,0 +1,45 @@
+.header {
+    height: 150px;
+}
+
+/*left start*/
+.mylabel{
+	background: url(../img/label.png);
+	width: 800px;
+	height: 366px;
+	background-repeat: no-repeat;
+	margin-left: 30px;
+	float: left;
+}
+
+
+
+.comment{
+	margin-left: 60px;
+	margin-top: 60px;
+}
+.comment p{
+	margin-top: 5px;
+}
+
+.mypaginatione{
+
+   margin-left: 160px;
+	margin-top: 33px;
+}
+
+/*left end*/
+
+
+
+/*right start*/
+
+form{
+	margin-top: 100px;
+}
+
+.table input {
+  float: right;
+}
+/*right end*/
+
