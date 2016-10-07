@@ -6,8 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{% static 'css/mycss.css' %}">
-         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-         <link href="http://g.alicdn.com/sj/dpl/1.5.1/css/sui.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"> 
        <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css"> -->
 
     </head>
@@ -39,6 +38,8 @@
                     <p>hello world</p>
                     
                    </div>
+
+ 
                     
 <!--left-comment end-->
                    
@@ -46,17 +47,17 @@
 <!--left page start-->
 <div class=" mypaginatione">
 
-   <div class="sui-pagination">
-    <ul>
-      <li class="prev disabled"><a href="#">«</a></li>
-      <li class="active"><a href="#">1</a></li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">5</a></li>
-      <li class="next"><a href="#">»</a></li>
-    </ul>
-  </div>
+  <nav>
+  <ul class="pagination">
+    <li><a href="#">&laquo;</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>
+  </ul>
+</nav>
 	
 </div> 
 <!--left page end-->
@@ -99,6 +100,31 @@
 <!--row end-->
 
 </div>
+
+<!--show detail start-->
+
+<!-- Modal -->
+ {%for i in mo %}
+<div class="modal fade" id="{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{i.title}}</h4>
+      </div>
+      <div class="modal-body" style="word-break:break-all;">
+        {{i.comment}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<!--show detail end-->
 
   <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
