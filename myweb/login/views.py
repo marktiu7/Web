@@ -8,13 +8,13 @@ from django.core.paginator import Paginator
 # Create your views here.
 
 def index(request):
-   
+#Paginator   
     current_page=request.GET.get("page",1)
-
     mo = models.Notice.objects.all()
     pages=Paginator(mo,6)
     mo=pages.page(current_page)
 
+#login in
     if request.method=='POST':
         uf =UserForm(request.POST)
         if uf.is_vaild():

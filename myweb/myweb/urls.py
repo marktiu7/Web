@@ -22,4 +22,5 @@ urlpatterns = [
 
 urlpatterns +=[
     url(r'^login/',include('login.urls')),
+ 
 ]
