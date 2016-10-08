@@ -33,9 +33,7 @@
                      {%for i in mo %}
                     <p data-toggle="modal" data-target="#{{i.id}}">{{i.title}}</p>
                      {%endfor%}
-                    <p>hello world</p>
-                    <p>hello world</p>
-                    <p>hello world</p>
+                    
                     
                    </div>
 
@@ -49,13 +47,26 @@
 
   <nav>
   <ul class="pagination">
-    <li><a href="#">&laquo;</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">&raquo;</a></li>
+
+    <li><a href="?page=
+    {% if mo.has_previous %}
+       {{ mo.previous_page_number }}
+    {% else %}
+        {{mo.number}}
+    {% endif %}
+    ">&laquo;</a></li>
+
+    {% for page in pages.page_range %}
+    <li><a href="?page={{page}}">{{page}}</a></li>
+    {% endfor %}
+
+    <li><a href="?page=
+    {% if mo.has_next %}
+        {{ mo.next_page_number }}
+    {% else %}
+        {{ mo.number }}
+    {% endif %}
+    ">&raquo;</a></li>
   </ul>
 </nav>
 	
