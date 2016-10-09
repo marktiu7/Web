@@ -10,7 +10,7 @@
     </head>
     <body>
 
-<div class="container">
+<div class="container-fluid">
 
 			<div class="row">
 <!--
@@ -18,9 +18,9 @@
 	时间：2016-10-07
 	描述：header start
 -->
-		<div style="margin-top: 30px;">
+		<div style="margin-top: 20px;">
 
-					<nav class="navbar navbar-inverse navbar-fixed-top">
+					<nav class="navbar navbar-inverse ">
 						<div class="container-fluid">
 
 							<div class="navbar-header">
@@ -35,7 +35,7 @@
 
 								</ul>
 
-								<ul class="nav navbar-nav navbar-right" style="margin-right: 150px;">
+								<ul class="nav navbar-nav navbar-right" style="margin-right: 100px;">
 
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">Username <span class="caret"></span></a>
@@ -64,14 +64,17 @@
 -->
 
 
-
+<div class="row">
 
 <!--
 	作者：dragonmatt@163.com
 	时间：2016-10-07
 	描述：left nav start
 -->
-		<div class="panel-group col-md-3" id="accordion" role="tablist" aria-multiselectable="true" style="margin-top: 50px;">
+
+	
+
+		<div class="panel-group col-md-3" id="accordion" role="tablist" aria-multiselectable="true" style="margin-left:10px ">
 					<div class="panel panel-default">
 						<div class="panel-heading" role="tab" id="headingOne">
 							<h4 class="panel-title">
@@ -85,7 +88,7 @@
 							<div class="panel-body">
 					                      <ul class="nav">
 											  {% block url %}
-                                     <li><a href="ip/ipadd" target="_blank">Nav item</a></li>
+                                     <li><a href="{% url 'ipadd' %}" target="_black">Nav item</a></li>
                                      <li><a href="">Nav item again</a></li>
                                      <li><a href="">One more nav</a></li>
                                      <li><a href="">Another nav item</a></li>
@@ -141,6 +144,10 @@
 						</div>
 					</div>
 				</div>
+
+
+
+
 <!--
 	作者：dragonmatt@163.com
 	时间：2016-10-07
@@ -157,7 +164,7 @@
 	时间：2016-10-07
 	描述：right comment start
 -->
-				<div class="col-md-8 " style="margin-top: 50px;">
+				<div class="col-md-8 "">
           {{hh}}
 					hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhasddddddddddddfgweagtarwcomment
   <br>
@@ -172,7 +179,7 @@
 	描述：right comment end
 -->
 
-
+</div>
 
 
 <!--<nav class="nav"  style="margin-top: 70px;">

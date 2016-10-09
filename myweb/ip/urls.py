@@ -22,8 +22,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
 '''
-ipaddr='ipaddr'
 
-urlpatterns =[
-    url(r'^ipadd/$',views.ipadd,name=ipaddr),
-]
