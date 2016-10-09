@@ -25,7 +25,7 @@
            <div class="col-md-9" >
 
 
-        <div class=' mylabel'>
+                 <div class=' mylabel'>
 
 <!--left-comment start-->                   
                     <div class="comment">
@@ -42,39 +42,9 @@
 <!--left-comment end-->
                    
 
-<!--left page start-->
-<div class=" mypaginatione">
 
-  <nav>
-  <ul class="pagination">
 
-    <li><a href="?page=
-    {% if mo.has_previous %}
-       {{ mo.previous_page_number }}
-    {% else %}
-        {{mo.number}}
-    {% endif %}
-    ">&laquo;</a></li>
-
-    {% for page in pages.page_range %}
-    <li><a href="?page={{page}}">{{page}}</a></li>
-    {% endfor %}
-
-    <li><a href="?page=
-    {% if mo.has_next %}
-        {{ mo.next_page_number }}
-    {% else %}
-        {{ mo.number }}
-    {% endif %}
-    ">&raquo;</a></li>
-  </ul>
-</nav>
-	
-</div> 
-<!--left page end-->
-
-                    
-        </div>
+   </div>               
 
        </div>
 
@@ -110,6 +80,37 @@
 
 <!--row end-->
 
+<div class="row">
+  <div class=" col-md-3 mypaginatione">
+
+  <nav>
+  <ul class="pagination">
+
+    <li><a href="?page=
+    {% if mo.has_previous %}
+       {{ mo.previous_page_number }}
+    {% else %}
+        {{mo.number}}
+    {% endif %}
+    ">&laquo;</a></li>
+
+    {% for page in pages.page_range %}
+    <li><a href="?page={{page}}">{{page}}</a></li>
+    {% endfor %}
+
+    <li><a href="?page=
+    {% if mo.has_next %}
+        {{ mo.next_page_number }}
+    {% else %}
+        {{ mo.number }}
+    {% endif %}
+    ">&raquo;</a></li>
+  </ul>
+</nav>
+	
+</div> 
+</div>
+
 </div>
 
 <!--show detail start-->
@@ -139,5 +140,13 @@
 
   <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+  <script>
+     $(document).ready(function(){
+    	$('.pagination a').click(function () {
+    	//	alert('hello world!');
+    	});
+    });
+  </script>
     </body>
 </html>
