@@ -24,27 +24,50 @@
 <!--left start-->
            <div class="col-md-9" >
 
-
+<!--left-comment start-->   
                  <div class=' mylabel'>
 
-<!--left-comment start-->                   
-                    <div class="comment">
+                    <div class="comment"  style="height: 225px;">
                     <h4 style="margin-left: 170px;" >通知</h4>
                      {%for i in mo %}
                     <p data-toggle="modal" data-target="#{{i.id}}">{{i.title}}</p>
                      {%endfor%}
                     
-                    
                    </div>
-
- 
-                    
 <!--left-comment end-->
-                   
 
+<!--left pagination start-->
+                 <div style="margin-left: 110px;">
+                   <nav>
+                     <ul class="pagination">
+                             <li><a href="?page=
+                                 {% if mo.has_previous %}
+                                 {{ mo.previous_page_number }}
+                                 {% else %}
+                                 {{mo.number}}
+                                 {% endif %}
+                                 ">&laquo;</a></li>
 
+                                 {% for page in pages.page_range %}
+                                 <li><a href="?page={{page}}">{{page}}</a></li>
+                                 {% endfor %}
 
-   </div>               
+                            <li><a href="?page=
+                                 {% if mo.has_next %}
+                                 {{ mo.next_page_number }}
+                                 {% else %}
+                                 {{ mo.number }}
+                                 {% endif %}
+                                 ">&raquo;</a></li>
+                      </ul>
+                 </nav>
+              </div> 
+
+ <!--left pagination end-->
+                    
+
+   </div> 
+ <!--left-comment end-->             
 
        </div>
 
@@ -80,36 +103,9 @@
 
 <!--row end-->
 
-<div class="row">
-  <div class=" col-md-3 mypaginatione">
 
-  <nav>
-  <ul class="pagination">
+ 
 
-    <li><a href="?page=
-    {% if mo.has_previous %}
-       {{ mo.previous_page_number }}
-    {% else %}
-        {{mo.number}}
-    {% endif %}
-    ">&laquo;</a></li>
-
-    {% for page in pages.page_range %}
-    <li><a href="?page={{page}}">{{page}}</a></li>
-    {% endfor %}
-
-    <li><a href="?page=
-    {% if mo.has_next %}
-        {{ mo.next_page_number }}
-    {% else %}
-        {{ mo.number }}
-    {% endif %}
-    ">&raquo;</a></li>
-  </ul>
-</nav>
-	
-</div> 
-</div>
 
 </div>
 
@@ -144,7 +140,8 @@
   <script>
      $(document).ready(function(){
     	$('.pagination a').click(function () {
-    	//	alert('hello world!');
+          //var 
+    	    //alert('hello world!');
     	});
     });
   </script>
