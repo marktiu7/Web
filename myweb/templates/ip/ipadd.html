@@ -1,5 +1,12 @@
 {% extends "base.html"%}
 {% block content %}
-{{mo}}
+
+ <form enctype="multipart/form-data" method="POST">
+      {% csrf_token %}
+        {{ uf.as_p }}
+
+        <br>
+        <input type="submit" name="" value="upload">
+ </form>
 {% endblock%}
 
