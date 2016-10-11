@@ -1,12 +1,22 @@
 {% extends "base.html"%}
 {% block content %}
-
+ <div class="col-md-3">
  <form enctype="multipart/form-data" method="POST">
-      {% csrf_token %}
-        {{ uf.as_p }}
-
+     {{uf.ip.label_tag}} {{uf.ip}}
+     {{uf.user.label_tag}} {{uf.user}}
+     {{uf.password.label_tag}} {{uf.password}}
         <br>
         <input type="submit" name="" value="upload">
  </form>
+</div>
+
+<div class="col-md-3">
+
+ <form enctype="multipart/form-data" method="POST">
+     {{uf.file.label_tag}} {{uf.file}}
+        <br>
+        <input type="submit" name="" value="upload">
+ </form>
+</div>
 {% endblock%}
 

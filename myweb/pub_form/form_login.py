@@ -5,6 +5,7 @@ from login.models import *
 #login
 
 class UserForm(ModelForm):
+
     class Meta:
         model = login
         fields = '__all__'
