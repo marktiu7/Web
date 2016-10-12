@@ -1,10 +1,8 @@
 {% extends "base.html"%}
 {% block content %}
  <div class="col-md-3">
- <form enctype="multipart/form-data" method="POST">
-     {{uf.ip.label_tag}} {{uf.ip}}
-     {{uf.user.label_tag}} {{uf.user}}
-     {{uf.password.label_tag}} {{uf.password}}
+ <form method="POST">
+     {{ipleft}}
         <br>
         <input type="submit" name="" value="upload">
  </form>
@@ -13,7 +11,7 @@
 <div class="col-md-3">
 
  <form enctype="multipart/form-data" method="POST">
-     {{uf.file.label_tag}} {{uf.file}}
+     {{ipright}}
         <br>
         <input type="submit" name="" value="upload">
  </form>

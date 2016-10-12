@@ -5,7 +5,7 @@ from ip.models import iptable
 #ipadd
 
 class ipForm(ModelForm):
-    file = forms.FileField()
+
     class Meta:
         model = iptable
         fields = '__all__'

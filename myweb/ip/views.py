@@ -5,6 +5,7 @@ from myweb.settings import BASE_DIR
 from django.http import HttpResponse
 from pub_form.form_ipadd import ipForm
 from . import models
+from pub_form.form_upload import UploadFile
 
 #For upload
 def handle_upload(f):
@@ -15,12 +16,22 @@ def handle_upload(f):
             desction.write(chunk)
 
 
+def upload(r):
+    if r.method=="POST":
+        upfile=UploadFile(r.POST,r.FILES)
+        if upfile.is_valid():
+          handle_upload(upfile.cleaned_data['file'])
+          return HttpResponse('successful!')
+    else:
+        upfile=UploadFile()
 
+    return upfile
 #For ipaddtable
 
-def ipadd(request):
-    if request.method =="POST":
-        uf = ipForm(request.POST,request.FILES)
+
+def ipaddtable(r):
+    if r.method =="POST":
+        uf = ipForm(r.POST)
         if uf.is_valid():
             ip=uf.cleaned_data['ip']
             user=uf.cleaned_data['user']
@@ -32,8 +43,13 @@ def ipadd(request):
             table.password=password
             table.save()
 
-            handle_upload(uf.cleaned_data['file'])
             return HttpResponse('successful!')
     else:
         uf = ipForm()
+    return uf
+
+
+def ipadd(request):
+    ipleft=ipaddtable(request)
+    ipright=upload(request)
     return render_to_response('ip/ipadd.html',locals())
