@@ -16,7 +16,7 @@ def upload(r):
         upfile=UploadFile(r.POST,r.FILES)
         if upfile.is_valid():
           handle_upload(upfile.cleaned_data['file'])
-          open_file(upfile.cleaned_data['file'])
+
           return HttpResponse('successful!')
     else:
         upfile=UploadFile()
