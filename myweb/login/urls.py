@@ -21,6 +21,10 @@ from login import views
 # import ip views 
 from ip.views import ipadd
 
+
+# import iptables views
+from iptables.views import hello
+
 '''
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -37,4 +41,10 @@ urlpatterns =[
 #url for ip app
 urlpatterns +=[
     url(r'^main/ipadd$',ipadd,name='ipadd'),
+]
+
+#url for iptables app
+
+urlpatterns +=[
+    url(r'^main/iptables$',hello,name='iptablesadd')
 ]

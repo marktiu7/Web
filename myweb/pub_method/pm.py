@@ -2,9 +2,11 @@ import os
 from myweb.settings import BASE_DIR
 import MySQLdb
 from django.http import HttpResponse
+import  paramiko
 
 
 
+#method for unpload
 def handle_upload(f):
     path = os.path.join(BASE_DIR, 'upload/').replace('\\', '/')
     filename=path+f.name
@@ -15,6 +17,8 @@ def handle_upload(f):
 
     open_file(filename)
 
+
+#methond for openfile
 
 def open_file(filename):
   iplist=[]
@@ -44,7 +48,7 @@ def open_file(filename):
         print ("Sorry,some error!")
 
 
-
+# method for mysql_insert
 def mysql_insert(val):
   try:
 
@@ -57,3 +61,14 @@ def mysql_insert(val):
 
   except MySQLdb.Error, e:
           print ('Some error!')
+
+
+#method for connect paramiko
+
+def paramiko_connect(ip,user,password,comm):
+    ssh = paramiko.SSHClient()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh.connect('%s',22,'%s','%s' %(ip,user,password))
+    stdin,stdout,stderr=ssh.exec_command(comm)
+    print stdout.readlines()
+    ssh.close()

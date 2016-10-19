@@ -20,31 +20,5 @@
 </div>
 {% endblock%}
 
-{% block ajax %}
-$(document).ready(function(){
-  $('#formadd').submit(function(){
-        var ip = $("#id_ip").val();
-        var user = $("#id_user").val();
-        var password = $("#id_password").val();
-
-   $.ajax({
-         type:"POST",
-         data:{ip:ip,user=user,password=password},
-         url :"{%url 'ipadd'%}",
-         cache:false,
-         dataType:"html",
-         success: function(result,status,xml){
-           alert(result);
-         };
-         error:function(){
-           alert("false");
-         };
-
-   })
-        return false;
-});
-
-});
-{% endblock %}
 
 
