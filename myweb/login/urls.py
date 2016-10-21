@@ -23,7 +23,7 @@ from ip.views import ipadd
 
 
 # import iptables views
-from iptables.views import hello
+from iptables.views import iptablesshow,tablesshow
 
 '''
 urlpatterns = [
@@ -46,5 +46,6 @@ urlpatterns +=[
 #url for iptables app
 
 urlpatterns +=[
-    url(r'^main/iptables$',hello,name='iptablesadd')
+    url(r'^main/iptables$',iptablesshow,name='iptablesshow'),
+    url(r'^main/iptabless$',tablesshow,name='tableshow')
 ]
